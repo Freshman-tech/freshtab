@@ -1,0 +1,128 @@
+/* ==========================================================================
+   #STYLES
+   ========================================================================== */
+
+:root {
+  --white: #fff;
+}
+
+.button {
+  line-height: 1.15;
+  font-family: -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;
+  box-sizing: border-box;
+  outline: none;
+  transition: opacity .2s ease-in-out;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(0,0,0,.04);
+  opacity: 0.8;
+  font-size: 14px;
+  background-color: rgba(0,0,0,.2);
+  border: 1px solid hsla(0,0%,100%,.5);
+  padding: 8px 12px;
+  border-radius: 4px;
+  align-items: center;
+  fill: currentColor;
+  display: flex;
+}
+
+.button:hover, .button:active, .button:focus {
+  opacity: 1;
+}
+
+.header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+}
+
+.footer {
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  transition: transform 0.5s;
+}
+
+.footer a {
+  color: var(--white);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.body.history-open .footer {
+  transform: translateY(-150px);
+}
+
+.icon-close {
+  display: none;
+}
+
+.body.history-open .icon-close {
+  display: inline;
+}
+
+.body.history-open .icon-open {
+  display: none;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+}
+
+.history-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.history-button * {
+  pointer-events: none;
+}
+
+.history {
+  padding: .3em;
+  background-color: #000;
+  position: fixed;
+  transition: transform 0.5s;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  transform: translateY(150px);
+  display: grid;
+  grid-column-gap: .3em;
+  grid-template-columns: repeat(10,1fr);
+  grid-template-rows: 100%;
+}
+
+.history.show {
+  transform: translateY(0);
+}
+
+.history-image {
+  cursor: pointer;
+}
+
+.history-image, .history-placeholder {
+  border-radius: 2px;
+  background-color: hsla(0,0%,100%,.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
